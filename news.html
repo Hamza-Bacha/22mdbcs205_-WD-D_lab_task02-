@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UET Mardan - News Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0;
+        }
+        
+        nav ul li a {
+            display: block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: #1e3c72;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background: #1e3c72;
+            color: white;
+        }
+        
+        main {
+            padding: 2rem 0;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #2a5298;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 1.5rem;
+        }
+        
+        .news-card h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .news-meta {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        
+        .news-card p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: #1e3c72;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .read-more:hover {
+            background: #2a5298;
+        }
+        
+        .recent-posts {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .recent-posts ul {
+            list-style: none;
+        }
+        
+        .recent-posts li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .recent-posts li:last-child {
+            border-bottom: none;
+        }
+        
+        .recent-posts a {
+            color: #1e3c72;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .recent-posts a:hover {
+            color: #2a5298;
+            text-decoration: underline;
+        }
+        
+        .view-all {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background: #2a5298;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .view-all:hover {
+            background: #1e3c72;
+        }
+        
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            
+            nav ul li a {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🎓 University of Engineering and Technology, Mardan</h1>
+            <p>Stay Updated with Latest News & Events</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="news.html">Home</a></li>
+            <li><a href="recent.html">Recent Posts</a></li>
+            <li><a href="index.html">Document Library</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <section>
+            <h2 class="section-title">📰 Top Stories</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500" alt="University Campus" class="news-image">
+                    <div class="news-content">
+                        <h3>UET Mardan Achieves Top Ranking in Engineering Education</h3>
+                        <p class="news-meta">📅 October 2, 2025 | 👤 Admin</p>
+                        <p>The university has been recognized as one of the leading engineering institutions in the region, showcasing excellence in academic programs and research initiatives...</p>
+                        <a href="article1.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=500" alt="Research Lab" class="news-image">
+                    <div class="news-content">
+                        <h3>New State-of-the-Art Research Lab Inaugurated</h3>
+                        <p class="news-meta">📅 October 1, 2025 | 👤 Admin</p>
+                        <p>UET Mardan inaugurates a cutting-edge research laboratory equipped with modern technology to facilitate advanced research in artificial intelligence and robotics...</p>
+                        <a href="article2.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=500" alt="Students Collaboration" class="news-image">
+                    <div class="news-content">
+                        <h3>Students Win National Hackathon Competition</h3>
+                        <p class="news-meta">📅 September 28, 2025 | 👤 Admin</p>
+                        <p>A team of brilliant students from UET Mardan secured first position in the National Hackathon, competing against top universities across Pakistan...</p>
+                        <a href="article1.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <section class="recent-posts">
+            <h2 class="section-title">📌 Recent Posts</h2>
+            <ul>
+                <li>🔹 <a href="recent.html">Faculty Development Workshop Scheduled for October</a></li>
+                <li>🔹 <a href="recent.html">Admission Open for Spring 2026 Semester</a></li>
+                <li>🔹 <a href="recent.html">Alumni Meet 2025 - Reconnecting with Graduates</a></li>
+                <li>🔹 <a href="recent.html">Sports Week Event Brings Excitement to Campus</a></li>
+                <li>🔹 <a href="recent.html">Career Fair 2025 - Connecting Students with Industry</a></li>
+            </ul>
+            <a href="recent.html" class="view-all">View All Recent Posts →</a>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 University of Engineering and Technology, Mardan. All rights reserved.</p>
+            <p>Designed with ❤️ for academic excellence</p>
+        </div>
+    </footer>
+</body>
+</html>

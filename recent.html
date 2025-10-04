@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>University News & Updates</title>
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card: #12141a;
+      --text: #e6e8ee;
+      --muted: #a8b0bd;
+      --accent: #4da3ff;
+      --accent-2: #73f5b8;
+      --ring: 0 0 0 2px color-mix(in oklab, var(--accent) 40%, transparent);
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 800px at 10% -10%, #10131c, transparent 60%),
+                  radial-gradient(1400px 900px at 110% 10%, #0f1621, transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      padding: 2rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    header.page-header {
+      display: grid;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+    }
+    header.page-header h1 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      letter-spacing: .2px;
+    }
+    header.page-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .posts-list {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    @media (min-width: 700px) {
+      .posts-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (min-width: 1024px) {
+      .posts-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    article.post-item {
+      background: linear-gradient(180deg, #151925, #11151f 60%, #10131b);
+      border: 1px solid #202839;
+      border-radius: var(--radius);
+      padding: 1rem;
+      display: grid;
+      gap: .6rem;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    article.post-item:focus-within,
+    article.post-item:hover {
+      transform: translateY(-2px);
+      border-color: #2a3755;
+      box-shadow: var(--ring);
+    }
+    .post-title {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.35;
+    }
+    .post-title a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .post-title a:hover,
+    .post-title a:focus {
+      text-decoration: underline;
+      text-decoration-color: color-mix(in oklab, var(--accent) 75%, #fff 25%);
+      text-underline-offset: 3px;
+    }
+
+    .post-meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      flex-wrap: wrap;
+    }
+    .post-meta .dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: #3a455e;
+      display: inline-block;
+    }
+
+    .post-summary {
+      margin: .2rem 0 .4rem;
+      color: #d5dae4;
+      font-size: .95rem;
+    }
+
+    .post-actions {
+      margin-top: .2rem;
+    }
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .95rem;
+      padding: .45rem .7rem;
+      border: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
+      border-radius: 10px;
+      background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 8%, transparent), transparent);
+      transition: background .2s ease, transform .15s ease, border-color .2s ease;
+    }
+    .read-more:hover,
+    .read-more:focus {
+      transform: translateY(-1px);
+      border-color: color-mix(in oklab, var(--accent) 60%, transparent);
+      background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 14%, transparent), transparent);
+    }
+
+    /* Reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      article.post-item,
+      .read-more { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container" aria-labelledby="news-heading" itemscope itemtype="https://schema.org/Blog">
+    <header class="page-header">
+      <h1 id="news-heading" itemprop="name">University News & Updates</h1>
+      <p itemprop="description">Latest announcements, events, and resources.</p>
+    </header>
+
+    <section class="posts-list" aria-label="Posts list">
+      <!-- 1 -->
+      <article class="post-item" itemscope itemtype="https://schema.org/BlogPosting">
+        <h3 class="post-title" itemprop="headline">
+          <a href="faculty-development-workshop-october.html" rel="bookmark" itemprop="url">
+            Faculty Development Workshop Scheduled for October
+          </a>
+        </h3>
+        <p class="post-meta">
+          <span aria-hidden="true">📅</span>
+          <time datetime="2025-09-25" itemprop="datePublished">September 25, 2025</time>
+          <span class="dot" aria-hidden="true"></span>
+          <span aria-hidden="true">👤</span>
+          <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Admin</span>
+          </span>
+        </p>
+        <p class="post-summary" itemprop="description">
+          The university is organizing a comprehensive faculty development workshop focusing on modern teaching
+          methodologies and educational technologies to enhance learning outcomes.
+        </p>
+        <p class="post-actions">
+          <a class="read-more" href="faculty-development-workshop-october.html" aria-label="Read full article: Faculty Development Workshop Scheduled for October">
+            Read Full Article →
+          </a>
+        </p>
+      </article>
+
+      <!-- 2 -->
+      <article class="post-item" itemscope itemtype="https://schema.org/BlogPosting">
+        <h3 class="post-title" itemprop="headline">
+          <a href="admissions-spring-2026.html" rel="bookmark" itemprop="url">
+            Admission Open for Spring 2026 Semester
+          </a>
+        </h3>
+        <p class="post-meta">
+          <span aria-hidden="true">📅</span>
+          <time datetime="2025-09-22" itemprop="datePublished">September 22, 2025</time>
+          <span class="dot" aria-hidden="true"></span>
+          <span aria-hidden="true">👤</span>
+          <span itemprop="author" itemscope itemtype="https://schema.org/Organization">
+            <span itemprop="name">Admissions Office</span>
+          </span>
+        </p>
+        <p class="post-summary" itemprop="description">
+          UET Mardan announces admissions for Spring 2026 semester in various engineering disciplines. Applications are
+          now being accepted through the online portal.
+        </p>
+        <p class="post-actions">
+          <a class="read-more" href="admissions-spring-2026.html" aria-label="Read full article: Admission Open for Spring 2026 Semester">
+            Read Full Article →
+          </a>
+        </p>
+      </article>
+
+      <!-- 3 -->
+      <article class="post-item" itemscope itemtype="https://schema.org/BlogPosting">
+        <h3 class="post-title" itemprop="headline">
+          <a href="alumni-meet-2025.html" rel="bookmark" itemprop="url">
+            Alumni Meet 2025 - Reconnecting with Graduates
+          </a>
+        </h3>
+        <p class="post-meta">
+          <span aria-hidden="true">📅</span>
+          <time datetime="2025-09-20" itemprop="datePublished">September 20, 2025</time>
+          <span class="dot" aria-hidden="true"></span>
+          <span aria-hidden="true">👤</span>
+          <span itemprop="author" itemscope itemtype="https://schema.org/Organization">
+            <span itemprop="name">Alumni Association</span>
+          </span>
+        </p>
+        <p class="post-summary" itemprop="description">
+          Join us for the grand Alumni Meet 2025 where former students will share their success stories and network with
+          current students and faculty members.
+        </p>
+        <p class="post-actions">
+          <a class="read-more" href="alumni-meet-2025.html" aria-label="Read full article: Alumni Meet 2025">
+            Read Full Article →
+          </a>
+        </p>
+      </article>
+
+      <!-- 4 -->
+      <article class="post-item" itemscope itemtype="https://schema.org/BlogPosting">
+        <h3 class="post-title" itemprop="headline">
+          <a href="sports-week-2025.html" rel="bookmark" itemprop="url">
+            Sports Week Event Brings Excitement to Campus
+          </a>
+        </h3>
+        <p class="post-meta">
+          <span aria-hidden="true">📅</span>
+          <time datetime="2025-09-18" itemprop="datePublished">September 18, 2025</time>
+          <span class="dot" aria-hidden="true"></span>
+          <span aria-hidden="true">👤</span>
+          <span itemprop="author" itemscope itemtype="https://schema.org/Organization">
+            <span itemprop="name">Sports Department</span>
+          </span>
+        </p>
+        <p class="post-summary" itemprop="description">
+          The annual Sports Week concluded with tremendous enthusiasm as students participated in various athletic
+          competitions showcasing their talents and sportsmanship.
+        </p>
+        <p class="post-actions">
+          <a class="read-more" href="sports-week-2025.html" aria-label="Read full article: Sports Week Event Brings Excitement to Campus">
+            Read Full Article →
+          </a>
+        </p>
+      </article>
+
+      <!-- 5 -->
+      <article class="post-item" itemscope itemtype="https://schema.org/BlogPosting">
+        <h3 class="post-title" itemprop="headline">
+          <a href="career-fair-2025.html" rel="bookmark" itemprop="url">
+            Career Fair 2025 - Connecting Students with Industry
+          </a>
+        </h3>
+        <p class="post-meta">
+          <span aria-hidden="true">📅</span>
+          <time datetime="2025-09-15" itemprop="datePublished">September 15, 2025</time>
+          <span class="dot" aria-hidden="true"></span>
+          <span aria-hidden="true">👤</span>
+          <span itemprop="author" itemscope itemtype="https://schema.org/Organization">
+            <span itemprop="name">Career Services</span>
+          </span>
+        </p>
+        <p class="post-summary" itemprop="description">
+          Leading companies from across Pakistan participated in the Career Fair 2025, offering internship and job
+          opportunities to graduating students.
+        </p>
+        <p class="post-actions">
+          <a class="read-more" href="career-fair-2025.html" aria-label="Read full article: Career Fair 2025 - Connecting Students with Industry">
+            Read Full Article →
+          </a>
+        </p>
+      </article>
+
+      <!-- 6 -->
+      <article class="post-item" itemscope itemtype="https://schema.org/BlogPosting">
+        <h3 class="post-title" itemprop="headline">
+          <a href="research-conference-sustainable-engineering.html" rel="bookmark" itemprop="url">
+            Research Conference on Sustainable Engineering Solutions
+          </a>
+        </h3>
+        <p class="post-meta">
+          <span aria-hidden="true">📅</span>
+          <time datetime="2025-09-12" itemprop="datePublished">September 12, 2025</time>
+          <span class="dot" aria-hidden="true"></span>
+          <span aria-hidden="true">👤</span>
+          <span itemprop="author" itemscope itemtype="https://schema.org/Organization">
+            <span itemprop="name">Research Department</span>
+          </span>
+        </p>
+        <p class="post-summary" itemprop="description">
+          Faculty and students presented groundbreaking research papers on sustainable engineering solutions at the
+          international conference hosted by UET Mardan.
+        </p>
+        <p class="post-actions">
+          <a class="read-more" href="research-conference-sustainable-engineering.html" aria-label="Read full article: Research Conference on Sustainable Engineering Solutions">
+            Read Full Article →
+          </a>
+        </p>
+      </article>
+
+      <!-- 7 -->
+      <article class="post-item" itemscope itemtype="https://schema.org/BlogPosting">
+        <h3 class="post-title" itemprop="headline">
+          <a href="new-library-resources-online.html" rel="bookmark" itemprop="url">
+            New Library Resources Now Available Online
+          </a>
+        </h3>
+        <p class="post-meta">
+          <span aria-hidden="true">📅</span>
+          <time datetime="2025-09-10" itemprop="datePublished">September 10, 2025</time>
+          <span class="dot" aria-hidden="true"></span>
+          <span aria-hidden="true">👤</span>
+          <span itemprop="author" itemscope itemtype="https://schema.org/Organization">
+            <span itemprop="name">Library Services</span>
+          </span>
+        </p>
+        <p class="post-summary" itemprop="description">
+          The university library has expanded its digital collection with thousands of new e-books, research journals,
+          and online resources accessible to all students.
+        </p>
+        <p class="post-actions">
+          <a class="read-more" href="new-library-resources-online.html" aria-label="Read full article: New Library Resources Now Available Online">
+            Read Full Article →
+          </a>
+        </p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture Notes - UET Mardan Library</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        nav {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li a {
+            display: block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: #1e3c72;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background: #1e3c72;
+            color: white;
+        }
+        
+        main {
+            padding: 2rem 0;
+        }
+        
+        .page-title {
+            font-size: 2rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .info-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+        
+        .info-box h3 {
+            color: #155724;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-box p {
+            color: #155724;
+        }
+        
+        .document-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .document-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .document-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .doc-icon {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .document-card h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .doc-meta {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        
+        .doc-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-preview {
+            background: #2a5298;
+            color: white;
+            flex: 1;
+        }
+        
+        .btn-preview:hover {
+            background: #1e3c72;
+        }
+        
+        .btn-download {
+            background: #28a745;
+            color: white;
+            flex: 1;
+        }
+        
+        .btn-download:hover {
+            background: #218838;
+        }
+        
+        .preview-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .preview-section h2 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            padding: 0.6rem 1.2rem;
+            background: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            background: #5a6268;
+        }
+        
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            
+            nav ul li a {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .document-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            iframe {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>📊 Lecture Notes - UET Mardan</h1>
+            <p>Course Slides and Presentation Materials</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Library Home</a></li>
+            <li><a href="research.html">Research Papers</a></li>
+            <li><a href="assignments.html">Assignments</a></li>
+            <li><a href="notes.html">Lecture Notes</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="news.html">News Portal</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <a href="index.html" class="back-link">← Back to Library Home</a>
+        
+        <h1 class="page-title">📚 Lecture Notes & Slides</h1>
+        
+        <div class="info-box">
+            <h3>✅ PowerPoint Presentations</h3>
+            <p>All lecture slides are hosted on Google Drive. You can preview them online or download them for offline viewing. Downloads use the same Google Drive export method as explained in the assignments section.</p>
+        </div>
+        
+        <div class="document-grid">
+            <div class="document-card">
+                <div class="doc-icon">📊</div>
+                <h3>Data Structures - Lecture 1</h3>
+                <p class="doc-meta">📅 Course: CS201 | 👤 Dr. Imran Ahmed | 📦 PPTX Format</p>
+                <div class="doc-buttons">
+                  <a href="https://docs.google.com/presentation/d/1GG6BOSuwXDSbRMYYIepmP7dGhQxpWcKE/edit?usp=sharing" target="_blank" class="btn btn-preview">👁️ Preview</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1GG6BOSuwXDSbRMYYIepmP7dGhQxpWcKE" class="btn btn-download">⬇️ Download</a>
+                </div>
+            </div>
+            
+            <div class="document-card">
+                <div class="doc-icon">📊</div>
+                <h3>Object-Oriented Programming</h3>
+                <p class="doc-meta">📅 Course: CS202 | 👤 Dr. Ayesha Khan | 📦 PPTX Format</p>
+                <div class="doc-buttons">
+      <a href="https://docs.google.com/presentation/d/1GG6BOSuwXDSbRMYYIepmP7dGhQxpWcKE/edit?usp=sharing" target="_blank" class="btn btn-preview">👁️ Preview</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1GG6BOSuwXDSbRMYYIepmP7dGhQxpWcKE" class="btn btn-download">⬇️ Download</a>
+                </div>
+            </div>
+            
+            <div class="document-card">
+                <div class="doc-icon">📊</div>
+                <h3>Database Systems Introduction</h3>
+                <p class="doc-meta">📅 Course: CS301 | 👤 Dr. Usman Ali | 📦 PPTX Format</p>
+                <div class="doc-buttons">
+<a href="https://docs.google.com/presentation/d/1GG6BOSuwXDSbRMYYIepmP7dGhQxpWcKE/edit?usp=sharing" target="_blank" class="btn btn-preview">👁️ Preview</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1GG6BOSuwXDSbRMYYIepmP7dGhQxpWcKE" class="btn btn-download">⬇️ Download</a>
+                </div>
+            </div>
+            
+            <div class="document-card">
+                <div class="doc-icon">📊</div>
+                <h3>Computer Networks Fundamentals</h3>
+                <p class="doc-meta">📅 Course: CS302 | 👤 Dr. Faisal Mahmood | 📦 PPTX Format</p>
+                <div class="doc-buttons">
+<a href="https://docs.google.com/presentation/d/1GG6BOSuwXDSbRMYYIepmP7dGhQxpWcKE/edit?usp=sharing" target="_blank" class="btn btn-preview">👁️ Preview</a>
+                    <a href="https://docs.google.com/presentation/d/5544332211/export/pptx" class="btn btn-download">⬇️ Download</a>
+                </div>
+            </div>
+            
+            <div class="document-card">
+                <div class="doc-icon">📊</div>
+                <h3>Software Engineering Principles</h3>
+                <p class="doc-meta">📅 Course: CS401 | 👤 Dr. Zainab Noor | 📦 PPTX Format</p>
+                <div class="doc-buttons">
+<a href="https://docs.google.com/presentation/d/1GG6BOSuwXDSbRMYYIepmP7dGhQxpWcKE/edit?usp=sharing" target="_blank" class="btn btn-preview">👁️ Preview</a>
+                    <a href="https://docs.google.com/presentation/d/6677889900/export/pptx" class="btn btn-download">⬇️ Download</a>
+                </div>
+            </div>
+            
+            <div class="document-card">
+                <div class="doc-icon">📊</div>
+                <h3>Artificial Intelligence Basics</h3>
+                <p class="doc-meta">📅 Course: CS402 | 👤 Dr. Hamza Yousaf | 📦 PPTX Format</p>
+                <div class="doc-buttons">
+                    <a href="https://docs.google.com/presentation/d/1GG6BOSuwXDSbRMYYIepmP7dGhQxpWcKE/edit?usp=sharing" target="_blank" class="btn btn-preview">👁️ Preview</a>
+                    <a href="https://docs.google.com/presentation/d/7788990011/export/pptx" class="btn btn-download">⬇️ Download</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="preview-section" id="preview1">
+            <h2>📖 Slide Preview: Data Structures - Lecture 1</h2>
+            <p style="margin-bottom: 1rem; color: #666;">Preview of the presentation slides below. Use the download button to save the file.</p>
+           <iframe src="https://docs.google.com/presentation/d/1GG6BOSuwXDSbRMYYIepmP7dGhQxpWcKE/embed?start=false&loop=false&delayms=3000"></iframe>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 University of Engineering and Technology, Mardan. All rights reserved.</p>
+            <p>Designed with ❤️ for academic excellence</p>
+        </div>
+    </footer>
+</body>
+</html>

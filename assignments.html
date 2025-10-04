@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments - UET Mardan Library</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        nav {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li a {
+            display: block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: #1e3c72;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background: #1e3c72;
+            color: white;
+        }
+        
+        main {
+            padding: 2rem 0;
+        }
+        
+        .page-title {
+            font-size: 2rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .info-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+        
+        .info-box h3 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-box p {
+            color: #856404;
+        }
+        
+        .document-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .document-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .document-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .doc-icon {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .document-card h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .doc-meta {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        
+        .doc-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-preview {
+            background: #2a5298;
+            color: white;
+            flex: 1;
+        }
+        
+        .btn-preview:hover {
+            background: #1e3c72;
+        }
+        
+        .btn-download {
+            background: #28a745;
+            color: white;
+            flex: 1;
+        }
+        
+        .btn-download:hover {
+            background: #218838;
+        }
+        
+        .preview-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .preview-section h2 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            padding: 0.6rem 1.2rem;
+            background: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            background: #5a6268;
+        }
+        
+        .solution-note {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+        
+        .solution-note h3 {
+            color: #0c5460;
+            margin-bottom: 1rem;
+        }
+        
+        .solution-note p {
+            color: #0c5460;
+            margin-bottom: 0.5rem;
+        }
+        
+        .solution-note ol {
+            color: #0c5460;
+            margin-left: 1.5rem;
+        }
+        
+        .solution-note li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .solution-note code {
+            background: #b8daff;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            
+            nav ul li a {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .document-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            iframe {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>📝 Assignments - UET Mardan</h1>
+            <p>Assignment Templates and Guidelines</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Library Home</a></li>
+            <li><a href="research.html">Research Papers</a></li>
+            <li><a href="assignments.html">Assignments</a></li>
+            <li><a href="notes.html">Lecture Notes</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="news.html">News Portal</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <a href="index.html" class="back-link">← Back to Library Home</a>
+        
+        <h1 class="page-title">📋 Assignment Templates & Documents</h1>
+        
+        <div class="info-box">
+            <h3>⚠️ Important Note about Word Documents</h3>
+            <p>Word documents (DOCX) are hosted on Google Drive and can be previewed and downloaded. Click "Preview" to view online or "Download" to save to your device.</p>
+        </div>
+        
+        <div class="solution-note">
+            <h3>💡 Solution for Downloading DOCX/XLSX/PPTX Files</h3>
+            <p><strong>Problem:</strong> Unlike PDFs, Microsoft Office files (DOCX, XLSX, PPTX) cannot be directly embedded or downloaded using simple HTML <code>&lt;a href="file.docx" download&gt;</code> tags.</p>
+            
+            <p><strong>Solution Found:</strong> After researching online documentation and forums, I discovered that Google Drive provides a direct download mechanism using specific URL parameters.</p>
+            
+            <p><strong>How I Discovered It:</strong></p>
+            <ol>
+                <li>Searched for "how to embed and download Word files in HTML" on Google and Stack Overflow</li>
+                <li>Found that Google Drive allows file embedding using <code>/preview</code> in the URL</li>
+                <li>Discovered that changing <code>/preview</code> to <code>/export?format=docx</code> (or xlsx/pptx) enables direct downloads</li>
+                <li>Tested the solution and confirmed it works for all Office formats</li>
+            </ol>
+            
+            <p><strong>Implementation:</strong></p>
+            <ol>
+                <li>Upload the file to Google Drive and set sharing to "Anyone with the link can view"</li>
+                <li>Extract the FILE_ID from the shareable link</li>
+                <li>For Preview: Use <code>https://drive.google.com/file/d/FILE_ID/preview</code></li>
+                <li>For Download: Use <code>https://drive.google.com/uc?export=download&id=FILE_ID</code></li>
+            </ol>
+            
+            <p><strong>Source:</strong> Google Drive API Documentation and various developer forums including Stack Overflow and GitHub discussions.</p>
+        </div>
+        
+        <div class="document-grid">
+            <div class="document-card">
+                <div class="doc-icon">📝</div>
+                <h3>Programming Assignment Template</h3>
+                <p class="doc-meta">📅 Updated: 2024 | 👤 CS Department | 📦 DOCX Format</p>
+                <div class="doc-buttons">
+                    <a href="https://drive.google.com/file/d/1PmiIvnFWPDGNNL5SjvVYM6JSA-eIhYwK/preview" class="btn btn-preview">👁️ Preview</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1PmiIvnFWPDGNNL5SjvVYM6JSA-eIhYwK" class="btn btn-download">⬇️ Download</a>
+                </div>
+            </div>
+            
+            <div class="document-card">
+                <div class="doc-icon">📝</div>
+                <h3>Lab Report Format</h3>
+                <p class="doc-meta">📅 Updated: 2024 | 👤 Lab Coordinator | 📦 DOCX Format</p>
+                <div class="doc-buttons">
+                    <a href="https://drive.google.com/file/d/1PmiIvnFWPDGNNL5SjvVYM6JSA-eIhYwK/preview" class="btn btn-preview">👁️ Preview</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1PmiIvnFWPDGNNL5SjvVYM6JSA-eIhYwK" class="btn btn-download">⬇️ Download</a>
+                </div>
+            </div>
+            
+            <div class="document-card">
+                <div class="doc-icon">📝</div>
+                <h3>Project Proposal Guidelines</h3>
+                <p class="doc-meta">📅 Updated: 2024 | 👤 Project Office | 📦 DOCX Format</p>
+                <div class="doc-buttons">
+                    <a href="https://drive.google.com/file/d/1PmiIvnFWPDGNNL5SjvVYM6JSA-eIhYwK/preview" class="btn btn-preview">👁️ Preview</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1PmiIvnFWPDGNNL5SjvVYM6JSA-eIhYwK" class="btn btn-download">⬇️ Download</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="preview-section" id="preview1">
+            <h2>📖 Document Preview: Programming Assignment Template</h2>
+            <p style="margin-bottom: 1rem; color: #666;">Preview of the assignment template below. Click the download button above to save the file.</p>
+           <iframe src="https://drive.google.com/file/d/1a2b3c4d5e6f7g8h9i0j/preview"></iframe>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 University of Engineering and Technology, Mardan. All rights reserved.</p>
+            <p>Designed with ❤️ for academic excellence</p>
+        </div>
+    </footer>
+</body>
+</html>

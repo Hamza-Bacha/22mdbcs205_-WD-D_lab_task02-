@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>University News & Updates</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --card: #f8fafc;
+      --border: #e5e7eb;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+
+    header {
+      margin-bottom: 24px;
+    }
+
+    header h1 {
+      margin: 0 0 6px;
+      font-size: 1.75rem;
+    }
+
+    header p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .posts-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 720px) {
+      .posts-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .post-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    .post-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+
+    .post-item h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    .post-meta {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .post-excerpt {
+      margin: 0 0 14px;
+    }
+
+    .post-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .post-link:focus,
+    .post-link:hover {
+      text-decoration: underline;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>University News & Updates</h1>
+      <p>Stay informed about events, admissions, research, and campus life.</p>
+    </header>
+
+    <div class="posts-list" role="list">
+      <article class="post-item" role="listitem">
+        <h3>
+          <a class="post-link" href="article1.html">
+            Faculty Development Workshop Scheduled for October
+            <span aria-hidden="true">→</span>
+            <span class="sr-only">Read full article</span>
+          </a>
+        </h3>
+        <p class="post-meta">
+          <time datetime="2025-09-25">📅 September 25, 2025</time>
+          <span>• 👤 Admin</span>
+        </p>
+        <p class="post-excerpt">
+          The university is organizing a comprehensive faculty development workshop focusing on modern teaching methodologies and educational technologies to enhance learning outcomes.
+        </p>
+      </article>
+
+      <article class="post-item" role="listitem">
+        <h3>
+          <a class="post-link" href="article2.html">
+            Admission Open for Spring 2026 Semester
+            <span aria-hidden="true">→</span>
+            <span class="sr-only">Read full article</span>
+          </a>
+        </h3>
+        <p class="post-meta">
+          <time datetime="2025-09-22">📅 September 22, 2025</time>
+          <span>• 👤 Admissions Office</span>
+        </p>
+        <p class="post-excerpt">
+          UET Mardan announces admissions for Spring 2026 semester in various engineering disciplines. Applications are now being accepted through the online portal.
+        </p>
+      </article>
+
+      <article class="post-item" role="listitem">
+        <h3>
+          <a class="post-link" href="article3.html">
+            Alumni Meet 2025 - Reconnecting with Graduates
+            <span aria-hidden="true">→</span>
+            <span class="sr-only">Read full article</span>
+          </a>
+        </h3>
+        <p class="post-meta">
+          <time datetime="2025-09-20">📅 September 20, 2025</time>
+          <span>• 👤 Alumni Association</span>
+        </p>
+        <p class="post-excerpt">
+          Join us for the grand Alumni Meet 2025 where former students will share their success stories and network with current students and faculty members.
+        </p>
+      </article>
+
+      <article class="post-item" role="listitem">
+        <h3>
+          <a class="post-link" href="article4.html">
+            Sports Week Event Brings Excitement to Campus
+            <span aria-hidden="true">→</span>
+            <span class="sr-only">Read full article</span>
+          </a>
+        </h3>
+        <p class="post-meta">
+          <time datetime="2025-09-18">📅 September 18, 2025</time>
+          <span>• 👤 Sports Department</span>
+        </p>
+        <p class="post-excerpt">
+          The annual Sports Week concluded with tremendous enthusiasm as students participated in various athletic competitions showcasing their talents and sportsmanship.
+        </p>
+      </article>
+
+      <article class="post-item" role="listitem">
+        <h3>
+          <a class="post-link" href="article5.html">
+            Career Fair 2025 - Connecting Students with Industry
+            <span aria-hidden="true">→</span>
+            <span class="sr-only">Read full article</span>
+          </a>
+        </h3>
+        <p class="post-meta">
+          <time datetime="2025-09-15">📅 September 15, 2025</time>
+          <span>• 👤 Career Services</span>
+        </p>
+        <p class="post-excerpt">
+          Leading companies from across Pakistan participated in the Career Fair 2025, offering internship and job opportunities to graduating students.
+        </p>
+      </article>
+
+      <article class="post-item" role="listitem">
+        <h3>
+          <a class="post-link" href="article6.html">
+            Research Conference on Sustainable Engineering Solutions
+            <span aria-hidden="true">→</span>
+            <span class="sr-only">Read full article</span>
+          </a>
+        </h3>
+        <p class="post-meta">
+          <time datetime="2025-09-12">📅 September 12, 2025</time>
+          <span>• 👤 Research Department</span>
+        </p>
+        <p class="post-excerpt">
+          Faculty and students presented groundbreaking research papers on sustainable engineering solutions at the international conference hosted by UET Mardan.
+        </p>
+      </article>
+
+      <article class="post-item" role="listitem">
+        <h3>
+          <a class="post-link" href="article7.html">
+            New Library Resources Now Available Online
+            <span aria-hidden="true">→</span>
+            <span class="sr-only">Read full article</span>
+          </a>
+        </h3>
+        <p class="post-meta">
+          <time datetime="2025-09-10">📅 September 10, 2025</time>
+          <span>• 👤 Library Services</span>
+        </p>
+        <p class="post-excerpt">
+          The university library has expanded its digital collection with thousands of new e-books, research journals, and online resources accessible to all students.
+        </p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>
